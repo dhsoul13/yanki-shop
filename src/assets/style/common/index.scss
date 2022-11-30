@@ -3,7 +3,6 @@
 * {
   font-family: 'Raleway', sans-serif;
   font-size: 16px;
-  background-color: #fff;
 }
 
 ///Размер шрифта
@@ -35,5 +34,28 @@ $color-for-active: #cca88a;
 @mixin _full {
   @media (max-width: 350px) {
     @content;
+  }
+}
+
+/// Ссылки
+
+.src-lag {
+  font-style: normal;
+  font-weight: 300;
+  font-size: $text-size18;
+  line-height: 21px;
+}
+
+//contianer
+
+.container {
+  width: 1140px;
+  margin: auto;
+}
+
+@include _full() {
+  .container {
+    width: 100%;
+    margin: auto;
   }
 }

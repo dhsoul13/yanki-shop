@@ -1,0 +1,12 @@
+.menu-down {
+  &__button {
+    border: none;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 300;
+    font-size: $text-size18;
+    line-height: 21px;
+    text-transform: uppercase;
+    color: $color-black;
+  }
+}
