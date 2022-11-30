@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  background-color: #fff;
+}
+
+///Размер шрифта
+
+$text-size46: 2.875rem;
+$text-size36: 2.25rem;
+$text-size32: 2rem;
+$text-size24: 1.5rem;
+$text-size20: 1.25rem;
+$text-size18: 1.125rem;
+$text-size14: 0.875rem;
+
+//Основные цвета
+
+$color-black: #252525;
+$color-white: #fff;
+$color-for-button: #e0bea2;
+$color-for-hover: #e0bea2;
+$color-for-active: #cca88a;
+
+///mixin
+
+@mixin _1140 {
+  @media (max-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin _full {
+  @media (max-width: 350px) {
+    @content;
+  }
+}
