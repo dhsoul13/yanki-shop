@@ -2,6 +2,7 @@
   &__contant {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding-bottom: 74px;
   }
   &__title {
     font-size: $text-size18;

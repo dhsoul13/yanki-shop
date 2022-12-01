@@ -112,6 +112,19 @@ $color-for-active-main: #252525;
   cursor: pointer;
 }
 
+///layout
+
+.layout {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
+  .m12 {
+    background-color: brown;
+    height: 100%;
+  }
+}
+
 //contianer
 
 .container {

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import Basket from '../../../assets/svg/backet';
 import Like from '../../../assets/svg/like';
 import Serch from '../../../assets/svg/serch';
@@ -7,7 +8,9 @@ import BurgerMenu from '../BurgerMenu';
 import MenuDown from '../MenuDown';
 import SearchInput from '../SearchInput';
 
-const Header = ({ location }) => {
+const Header = () => {
+  const location = useLocation().pathname;
+
   /// Открытие бургера меню
   useEffect(() => {
     console.log(location);
