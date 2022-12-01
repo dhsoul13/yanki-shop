@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
+import Footer from '../../component/common/Footer';
 import Header from '../../component/common/header';
 
 const MainPage = () => {
@@ -7,10 +8,12 @@ const MainPage = () => {
 
   return (
     <div>
-      <div>
+      {/* <div style={{ backgroundColor: 'brown' }}>
         <Header location={location.pathname} />
-      </div>
+      </div> */}
       <div className="m12">1 sdfsfsaf</div>
+
+      <Footer />
     </div>
   );
 };

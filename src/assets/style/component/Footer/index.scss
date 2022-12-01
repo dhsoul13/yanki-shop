@@ -1,0 +1,38 @@
+.footer {
+  &__contant {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  &__title {
+    font-size: $text-size18;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 19px;
+    color: $color-black;
+  }
+  &__social {
+    display: flex;
+  }
+  &__src {
+    margin-bottom: 10px;
+    h3 {
+      margin: 0;
+      font-style: normal;
+      font-weight: 200;
+      font-size: 16px;
+      line-height: 19px;
+      color: $color-black;
+      cursor: pointer;
+      svg {
+        margin-right: 10px;
+        cursor: pointer;
+
+        &:last-child() {
+          margin-right: 0;
+        }
+      }
+      @include effectElemMain(svg);
+    }
+    @include effectElem(h3);
+  }
+}
