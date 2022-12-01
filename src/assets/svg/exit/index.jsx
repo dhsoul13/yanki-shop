@@ -1,32 +1,30 @@
 import React from 'react';
 
-const BurgerButtonPassive = () => {
+const Exit = () => {
   return (
     <>
       <svg
-        width="34"
-        height="24"
-        viewBox="0 0 34 24"
+        width="28"
+        height="27"
+        viewBox="0 0 28 27"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
         <rect
+          x="3"
           width="34"
           height="4"
+          transform="rotate(45 3 0)"
         />
         <rect
-          y="10"
-          width="26"
+          y="24.0416"
+          width="34"
           height="4"
-        />
-        <rect
-          y="20"
-          width="18"
-          height="4"
+          transform="rotate(-45 0 24.0416)"
         />
       </svg>
     </>
   );
 };
 
-export default BurgerButtonPassive;
+export default Exit;

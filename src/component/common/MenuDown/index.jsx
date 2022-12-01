@@ -1,8 +1,9 @@
 import { Button, Menu, MenuItem } from '@mui/material';
 import React, { useEffect, useState } from 'react';
+import Arrow from '../../../assets/svg/arrow';
 import { lang, money } from '../../../helpers/content';
 
-const MenuDown = ({ type, classList }) => {
+const MenuDown = ({ type, classList, location }) => {
   ///Тип выпадающего меню
   const content = type === 'lang' ? lang : money;
 
@@ -49,14 +50,14 @@ const MenuDown = ({ type, classList }) => {
           fontSize: '1.125rem',
           lineHeight: '21px',
           textTransform: 'uppercase',
-          color: '#252525',
+          color: location === '/' ? '#fff' : '#252525',
           '&:hover': {
-            color: '#e0bea2',
-            backgroundColor: 'white',
+            color: location === '/' ? '#252525' : '#e0bea2',
+            backgroundColor: 'inherit',
           },
           '&:active': {
-            color: '#cca88a',
-            backgroundColor: 'white',
+            color: location === '/' ? '#252525' : '#cca88a',
+            backgroundColor: 'inherit',
           },
         }}
         id="fade-button"
@@ -64,7 +65,12 @@ const MenuDown = ({ type, classList }) => {
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
       >
-        {show}
+        <div className={`${classList}__menu-down-text menu-down__text`}>
+          <span>{show}</span>
+          <span className={`${anchorEl ? 'rotate' : ''}`}>
+            <Arrow />
+          </span>
+        </div>
       </Button>
       <Menu
         id="fade-menu"

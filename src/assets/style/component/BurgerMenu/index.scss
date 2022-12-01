@@ -1,0 +1,19 @@
+.burger-menu {
+  &__list {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: calc(1140px - 130px);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+
+    li {
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    @include effectElem(li);
+  }
+}

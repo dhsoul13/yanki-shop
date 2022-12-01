@@ -23,6 +23,9 @@ $color-for-button: #e0bea2;
 $color-for-hover: #e0bea2;
 $color-for-active: #cca88a;
 
+$color-for-hover-main: #252525;
+$color-for-active-main: #252525;
+
 ///mixin
 
 @mixin _1140 {
@@ -37,13 +40,76 @@ $color-for-active: #cca88a;
   }
 }
 
+@mixin effectElem($elem) {
+  transition: 0.3s ease all;
+  @if ($elem == svg) {
+    #{$elem}:hover {
+      fill: $color-for-hover;
+      transition: 0.3s ease all;
+    }
+
+    #{$elem}:active {
+      fill: $color-for-hover;
+      transition: 0.3s ease all;
+    }
+  } @else {
+    #{$elem}:hover {
+      color: $color-for-hover;
+      transition: 0.3s ease all;
+    }
+
+    #{$elem}:active {
+      color: $color-for-hover;
+      transition: 0.3s ease all;
+    }
+  }
+}
+
+@mixin effectElemMain($elem) {
+  transition: 0.3s ease all;
+  @if ($elem == svg) {
+    #{$elem}:hover {
+      transition: 0.3s ease all;
+      fill: $color-for-hover-main;
+    }
+
+    #{$elem}:active {
+      transition: 0.3s ease all;
+      fill: $color-for-hover-main;
+    }
+  } @else {
+    #{$elem}:hover {
+      transition: 0.3s ease all;
+      color: $color-for-hover-main;
+    }
+
+    #{$elem}:active {
+      transition: 0.3s ease all;
+      color: $color-for-hover-main;
+    }
+  }
+}
+
 /// Ссылки
 
-.src-lag {
+.src {
   font-style: normal;
   font-weight: 300;
   font-size: $text-size18;
   line-height: 21px;
+  text-transform: uppercase;
+  color: $color-black;
+  cursor: pointer;
+}
+
+.src-main {
+  font-style: normal;
+  font-weight: 300;
+  font-size: $text-size18;
+  line-height: 21px;
+  text-transform: uppercase;
+  color: $color-white;
+  cursor: pointer;
 }
 
 //contianer

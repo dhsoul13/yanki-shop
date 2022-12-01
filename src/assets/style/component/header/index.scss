@@ -1,9 +1,10 @@
 .header {
-  //   position: fixed;
-  //   left: 50%;
-  //   transform: translate(-50%, 0);
   z-index: 1400;
+  position: fixed;
+  right: 50%;
+  transform: translate(50%, 0%);
   &__content {
+    position: relative;
     display: grid;
     grid-template-columns: 34px minmax(10px, 104px) 1fr minmax(10px, 73px) 190px;
     align-items: center;
@@ -14,6 +15,13 @@
     grid-column: 3/4;
     display: flex;
     align-items: center;
+  }
+
+  &__burger-menu-el {
+    svg {
+      fill: black;
+    }
+    @include effectElem('svg');
   }
 
   &__title {
@@ -40,9 +48,7 @@
       margin-right: 25px;
     }
 
-    li:hover {
-      color: $color-for-hover;
-    }
+    @include effectElem(li);
 
     li:last-child {
       margin-right: 0;
@@ -54,27 +60,62 @@
 
   &__main-button {
     display: flex;
+    position: relative;
     div {
       margin-right: 30px;
       width: 25px;
       height: 25px;
       color: $color-black;
-      cursor: pointer;
       svg {
         fill: $color-black;
         width: 100%;
         height: 100%;
       }
 
-      svg:hover {
-        fill: $color-for-hover;
-      }
-      svg:active {
-        fill: $color-for-active;
-      }
+      @include effectElem(svg);
     }
     div:last-child {
       margin-right: 0;
     }
+  }
+
+  &__main-button-serch {
+    position: relative;
+  }
+}
+
+.main .header {
+  &__burger-menu-el {
+    svg {
+      fill: $color-white;
+    }
+    @include effectElemMain(svg);
+  }
+
+  &__title {
+    color: white;
+  }
+  background-color: none;
+
+  &__main-button {
+    display: flex;
+    div {
+      color: $color-white;
+      svg {
+        fill: $color-white;
+        width: 100%;
+        height: 100%;
+      }
+
+      @include effectElemMain(svg);
+    }
+  }
+
+  &__burger-menu-list {
+    color: $color-white;
+    @include effectElemMain(li);
+  }
+  &__main-src {
+    @include effectElemMain(li);
   }
 }
