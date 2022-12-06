@@ -3,6 +3,7 @@ import '../src/assets/style/index.scss';
 import { Route, Routes } from 'react-router-dom';
 import { useNavigate } from '@reach/router';
 import MainPage from './page/MainPage';
+import AuthHoc from './hoc/isAuthHoc';
 
 const App = () => {
   return (
@@ -15,7 +16,22 @@ const App = () => {
 
         <Route
           path="/ex"
-          element={<MainPage />}
+          element={
+            <AuthHoc>
+              <>
+                <MainPage></MainPage>
+              </>
+            </AuthHoc>
+          }
+        />
+
+        <Route
+          path="/auth"
+          element={
+            <>
+              <h1>dsdsd</h1>
+            </>
+          }
         />
       </Routes>
     </div>

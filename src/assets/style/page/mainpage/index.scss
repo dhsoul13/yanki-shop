@@ -1,0 +1,15 @@
+.main {
+  height: 100%;
+}
+
+.section-one {
+  height: 900px;
+  background-image: url('../../../../../public/img/main.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

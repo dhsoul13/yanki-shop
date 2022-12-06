@@ -3,6 +3,13 @@
 * {
   font-family: 'Raleway', sans-serif;
   font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  height: 100vh;
 }
 
 ///Размер шрифта
@@ -115,13 +122,12 @@ $color-for-active-main: #252525;
 ///layout
 
 .layout {
-  height: 100vh;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-  .m12 {
-    background-color: brown;
-    height: 100%;
+  &__conten {
+    flex: auto;
   }
 }
 
