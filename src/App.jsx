@@ -1,40 +1,31 @@
-import Header from './component/common/header';
 import '../src/assets/style/index.scss';
 import { Route, Routes } from 'react-router-dom';
 import { useNavigate } from '@reach/router';
 import MainPage from './page/MainPage';
 import AuthHoc from './hoc/isAuthHoc';
+import OutletCommon from './component/common/outlet';
 
 const App = () => {
   return (
-    <div>
+    <>
       <Routes>
-        <Route
-          path="/"
-          element={<MainPage />}
-        />
+        <Route element={<OutletCommon />}>
+          <Route
+            path="/"
+            element={<MainPage />}
+          />
 
-        <Route
-          path="/ex"
-          element={
-            <AuthHoc>
-              <>
-                <MainPage></MainPage>
-              </>
-            </AuthHoc>
-          }
-        />
-
-        <Route
-          path="/auth"
-          element={
-            <>
-              <h1>dsdsd</h1>
-            </>
-          }
-        />
+          <Route
+            path="/auth"
+            element={
+              <div>
+                <h1>sdasdsdjskdskdsjkd</h1>
+              </div>
+            }
+          />
+        </Route>
       </Routes>
-    </div>
+    </>
   );
 };
 
