@@ -138,3 +138,46 @@ export const footerEnd = [
     email: 'info@yanki.com',
   },
 ];
+
+export const product = [
+  {
+    id: 0,
+    title: 'Куртка',
+    src: '',
+  },
+  {
+    id: 1,
+    title: 'Пальто',
+    src: '',
+  },
+  {
+    id: 2,
+    title: 'Шуба',
+    src: '',
+  },
+  {
+    id: 3,
+    title: 'Парка',
+    src: '',
+  },
+  {
+    id: 4,
+    title: 'Куртка',
+    src: '',
+  },
+  {
+    id: 5,
+    title: 'Пальто',
+    src: '',
+  },
+  {
+    id: 6,
+    title: 'Шуба',
+    src: '',
+  },
+  {
+    id: 7,
+    title: 'Парка',
+    src: '',
+  },
+];

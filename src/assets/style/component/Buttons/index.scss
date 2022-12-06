@@ -1,0 +1,45 @@
+.button-type-one {
+  background: none;
+  border: none;
+  text-transform: uppercase;
+  color: $color-white;
+  font-size: $text-size18;
+  transition: $effect;
+  display: flex;
+  align-items: center;
+
+  div {
+    display: flex;
+    width: 6px;
+    height: 10px;
+    align-items: center;
+    margin-left: 10px;
+    svg {
+      height: 100%;
+      height: 100%;
+      display: flex;
+      fill: $color-white;
+    }
+  }
+  &:hover {
+    color: $color-black;
+    transition: $effect;
+    svg {
+      fill: $color-black;
+      transition: $effect;
+    }
+  }
+  &:active {
+    fill: $color-black;
+    transition: $effect;
+  }
+}
+
+.button-type-two {
+  background: none;
+  border: none;
+  width: 100%;
+  height: 50px;
+  background-color: $color-for-button;
+  color: $color-white;
+}

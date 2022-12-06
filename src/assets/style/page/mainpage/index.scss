@@ -1,7 +1,10 @@
-.main {
-  height: 100%;
-}
+// .main {
+//   height: 100%;
+// }
 
+.section {
+  margin-bottom: 100px;
+}
 .section-one {
   height: 900px;
   background-image: url('../../../../../public/img/main.png');
@@ -12,4 +15,107 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.section-two {
+  &__slider {
+    height: 450px;
+  }
+
+  &__slide {
+    background-image: url('../../../../../public/img/src-photo/type_1.png');
+    height: 300px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: $color-for-hover;
+      opacity: 0;
+      transition: $effect;
+    }
+
+    &:hover::before {
+      opacity: 0.3;
+      transition: $effect;
+    }
+
+    &:hover .section-two__slide-src {
+      transition: $effect;
+      background-color: $color-for-active;
+      font-weight: 800;
+    }
+  }
+  &__slider-buttons {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+    gap: 0px 10px;
+    div {
+      width: 50px;
+      height: 50px;
+      background-color: $color-for-button;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      svg {
+        fill: $color-white;
+        width: 15px;
+      }
+      &:first-child {
+        transform: rotate(180deg);
+      }
+      &:hover {
+        background-color: $color-for-active;
+        transition: $effect;
+      }
+      &:active {
+        background-color: $color-for-active;
+        transition: $effect;
+      }
+    }
+  }
+  &__slide-src {
+    height: 40px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-for-button;
+  }
+}
+
+.section-three {
+  &__content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  &__title {
+    text-align: center;
+  }
+  &__form {
+    width: calc(min(600px, 100%));
+  }
+  &__info {
+    font-size: 16px;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 200;
+    line-height: 19px;
+    text-align: center;
+    color: $color-black;
+  }
 }
