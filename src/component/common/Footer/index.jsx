@@ -6,12 +6,18 @@ const Footer = () => {
     <div className="footer">
       <div className="footer__container container">
         <div className="footer__contant">
-          {footer.map((el) => (
-            <div className="footer__elem">
+          {footer.map((el, id) => (
+            <div
+              className="footer__elem"
+              key={id}
+            >
               <h2 className="footer__title">{el.title}</h2>
               <div className="footer__elem-src">
-                {el.src.map((elem) => (
-                  <div className="footer__src">
+                {el.src.map((elem, id) => (
+                  <div
+                    className="footer__src"
+                    key={id}
+                  >
                     <h3>{elem.title}</h3>
                   </div>
                 ))}
@@ -19,14 +25,20 @@ const Footer = () => {
             </div>
           ))}
 
-          {footerEnd.map((el) => (
-            <div className="footer__elem">
+          {footerEnd.map((el, id) => (
+            <div
+              className="footer__elem"
+              key={id}
+            >
               <h2 className="footer__title">{el.title}</h2>
               <div className="footer__elem-src">
                 <div className="footer__src">
                   <div className="footer__social">
-                    {el.src.map((elem) => (
-                      <div className="footer__src">
+                    {el.src.map((elem, id) => (
+                      <div
+                        className="footer__src"
+                        key={id}
+                      >
                         <h3>{elem.text}</h3>
                       </div>
                     ))}

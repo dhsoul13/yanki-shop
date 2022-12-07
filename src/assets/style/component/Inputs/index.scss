@@ -12,5 +12,17 @@
 
   text-align: center;
 
+  outline: none;
+
   color: rgba(37, 37, 37, 0.5);
+
+  transition: $effect;
+
+  &:focus {
+    outline: none;
+    border-color: $color-for-button;
+    transition: $effect;
+    color: $color-black;
+    font-weight: 500;
+  }
 }

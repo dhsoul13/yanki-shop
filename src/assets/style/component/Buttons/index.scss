@@ -1,7 +1,7 @@
 .button-type-one {
   background: none;
   border: none;
-  text-transform: uppercase;
+
   color: $color-white;
   font-size: $text-size18;
   transition: $effect;
@@ -10,6 +10,7 @@
 
   div {
     display: flex;
+    text-transform: uppercase;
     width: 6px;
     height: 10px;
     align-items: center;
@@ -42,4 +43,15 @@
   height: 50px;
   background-color: $color-for-button;
   color: $color-white;
+  transition: $effect;
+
+  &:hover {
+    transition: $effect;
+
+    background-color: $color-for-hover;
+  }
+  &:active {
+    transition: $effect;
+    background-color: $color-for-active;
+  }
 }

@@ -1,18 +1,39 @@
 import React from 'react';
+import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import AlertCustome from '../../component/common/Alert';
 import ButtonTypeOne from '../../component/common/Buttons/ButtonType1';
 import ButtonTypeTwo from '../../component/common/Buttons/ButtonType2';
 import InputTypeOne from '../../component/common/Inputs/InputTypeOne';
 import Layout from '../../component/common/Layout';
 import SliderMain from '../../component/SliderMain';
 import { product } from '../../helpers/content';
+import { Validate } from '../../utils/validate';
 
 const MainPage = () => {
   const location = useLocation();
 
+  ///Для alert
+  const [activeError, setActiveError] = useState(false);
+
+  const showAlert = ({ status, text }) => {
+    setActiveError(true);
+  };
+
+  //Для form
+
+  const [result, setResult] = useState({});
+  const [text, setText] = useState('');
+
   return (
     <>
       <div className="main-page">
+        <AlertCustome
+          setState={setActiveError}
+          state={activeError}
+          title={result?.messange}
+          status={result?.status}
+        />
         <div className="main__section-one section-one section">
           <div className="container">
             <div className="section-one__content ">
@@ -47,21 +68,43 @@ const MainPage = () => {
                 <div className="section-three__product">
                   <form
                     onSubmit={(e) => {
-                      alert(e.target.elements['email'].value);
+                      try {
+                        showAlert({});
 
+                        setResult(
+                          Validate.isCheckEmail(
+                            e.target.elements['email'].value
+                          )
+                        );
+
+                        setText('');
+                      } catch (e) {
+                        setResult(e.value);
+                        console.error(e, e.value);
+
+                        setText('');
+                      }
                       e.preventDefault();
                     }}
                     action=""
                   >
-                    <InputTypeOne
-                      type={'text'}
-                      plaseholder="Введите текст"
-                      id="email"
-                    />
-                    <ButtonTypeTwo
-                      text={'Подписаться'}
-                      type={'submit'}
-                    />
+                    <div className="section-three__input">
+                      <InputTypeOne
+                        type={'text'}
+                        plaseholder="Введите текст"
+                        id="email"
+                        value={text}
+                        onChange={(e) => {
+                          setText(e.target.value);
+                        }}
+                      />
+                    </div>
+                    <div className="section-three__button">
+                      <ButtonTypeTwo
+                        text={'Подписаться'}
+                        type={'submit'}
+                      />
+                    </div>
                   </form>
                   <p className="section-three__info">
                     Нажимая на кнопку «Подписаться», я соглашаюсь на обработку
