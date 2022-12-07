@@ -4,6 +4,7 @@ import { useNavigate } from '@reach/router';
 import MainPage from './page/MainPage';
 import AuthHoc from './hoc/isAuthHoc';
 import OutletCommon from './component/common/outlet';
+import AuthPage from './page/AuthPage';
 
 const App = () => {
   return (
@@ -17,11 +18,7 @@ const App = () => {
 
           <Route
             path="/auth"
-            element={
-              <div>
-                <h1>sdasdsdjskdskdsjkd</h1>
-              </div>
-            }
+            element={<AuthPage />}
           />
         </Route>
       </Routes>

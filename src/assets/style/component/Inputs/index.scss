@@ -1,28 +1,47 @@
 .input-type-one {
-  width: 100%;
-  border: none;
-  border: 0.5px solid rgba(37, 37, 37, 1);
-  height: 50px;
+  position: relative;
+  &__input {
+    width: 100%;
+    border: none;
+    border: 0.5px solid rgba(37, 37, 37, 1);
+    height: 50px;
 
-  font-style: normal;
-  font-weight: 200;
-  font-size: 16px;
-  line-height: 19px;
-  /* identical to box height */
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
 
-  text-align: center;
+    text-align: center;
 
-  outline: none;
-
-  color: rgba(37, 37, 37, 0.5);
-
-  transition: $effect;
-
-  &:focus {
     outline: none;
-    border-color: $color-for-button;
+
+    color: rgba(37, 37, 37, 0.5);
+
     transition: $effect;
-    color: $color-black;
-    font-weight: 500;
+
+    &:focus {
+      outline: none;
+      border-color: $color-for-button;
+      transition: $effect;
+      color: $color-black;
+      font-weight: 500;
+    }
+  }
+
+  svg {
+    position: absolute;
+    width: 19px;
+    height: 19px;
+    top: 50%;
+    right: 20px;
+    transform: translate(0, -50%);
+  }
+
+  &__disable {
+    fill: $color-for-button;
+  }
+  &__active {
+    fill: $color-black;
   }
 }

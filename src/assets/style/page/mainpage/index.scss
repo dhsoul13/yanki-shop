@@ -21,6 +21,10 @@
     align-items: center;
     flex-direction: column;
   }
+
+  h1 {
+    cursor: default;
+  }
 }
 
 .section-two {
@@ -35,7 +39,7 @@
     background-image: url('../../../../../public/img/src-photo/type_1.png');
     height: 300px;
     color: $color-white;
-
+    cursor: pointer;
     &::before {
       content: '';
       position: absolute;
@@ -72,6 +76,8 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      cursor: pointer;
+
       svg {
         fill: $color-white;
         width: 15px;
