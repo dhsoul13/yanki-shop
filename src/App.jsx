@@ -5,6 +5,7 @@ import MainPage from './page/MainPage';
 import AuthHoc from './hoc/isAuthHoc';
 import OutletCommon from './component/common/outlet';
 import AuthPage from './page/AuthPage';
+import CatalogContainer from './container/CatalogContainer';
 
 const App = () => {
   return (
@@ -19,6 +20,10 @@ const App = () => {
           <Route
             path="/auth"
             element={<AuthPage />}
+          />
+          <Route
+            path="/catalog"
+            element={<CatalogContainer />}
           />
         </Route>
       </Routes>

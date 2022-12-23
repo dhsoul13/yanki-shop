@@ -1,0 +1,25 @@
+.sortComonent {
+  display: flex;
+  position: relative;
+  &__elem {
+    margin-right: 30px;
+    button {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 0;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 19px;
+    }
+    height: 30px;
+  }
+
+  &__button {
+    position: absolute;
+    width: 10%;
+    right: 0;
+    top: 0;
+    height: auto;
+  }
+}

@@ -1,0 +1,43 @@
+.catalog {
+  margin-top: 100px;
+  margin-bottom: 100px;
+
+  &__body {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    grid-column-gap: 30px;
+  }
+
+  &__filter {
+  }
+
+  &__reset {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0px;
+
+    button {
+      padding: 10px 35px;
+      background-color: $color-for-button;
+      border-radius: 20px;
+      border: none;
+      transition: $effect;
+      color: white;
+    }
+    button:hover {
+      background-color: $color-for-hover;
+      transition: $effect;
+      box-shadow: $shadow1;
+      color: $color-white;
+    }
+    button:active {
+      background-color: $color-for-active;
+      transition: $effect;
+      color: $color-white;
+    }
+  }
+  &__view {
+    display: flex;
+    flex-direction: column;
+  }
+}

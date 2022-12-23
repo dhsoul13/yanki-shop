@@ -23,3 +23,28 @@
     }
   }
 }
+
+.menu-down2 {
+  &__elem {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    &:active svg {
+      transition: $effect;
+      transform: rotate(180deg);
+    }
+  }
+  svg {
+    transition: $effect;
+    path {
+      fill: $color-for-button;
+    }
+  }
+  h2 {
+    color: $color-black;
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 19px;
+  }
+}

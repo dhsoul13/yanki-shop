@@ -1,25 +1,37 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import Basket from '../../../assets/svg/backet';
 import Like from '../../../assets/svg/like';
 import Serch from '../../../assets/svg/serch';
 import User from '../../../assets/svg/user';
+import { useScroll } from '../../../hooks/useScroll';
 import BurgerMenu from '../BurgerMenu';
 import MenuDown from '../MenuDown';
 import SearchInput from '../SearchInput';
 
 const Header = () => {
   const location = useLocation().pathname;
+  const [scrollY, removeScroll] = useScroll();
+  const [addBg, setAddBg] = useState(false);
 
   /// Открытие бургера меню
-  useEffect(() => {
-    console.log(location);
-  }, [location]);
+  useEffect(() => {}, [location]);
 
+  //Скролл эффект
+  useEffect(() => {
+    if (scrollY > 150) {
+      setAddBg(true);
+    }
+    if (scrollY < 150) {
+      setAddBg(false);
+    }
+  }, [scrollY]);
+
+  removeScroll();
   const [show, setShow] = useState(false);
 
   return (
-    <div className={`header ${location === '/' ? 'main' : ''}`}>
+    <div className={`header ${(location === '/') & !addBg ? 'main' : ''} `}>
       <div className="header__container container">
         <div className="header__content">
           <div className="header__button-burger">
@@ -37,7 +49,7 @@ const Header = () => {
               <div className="header__main">
                 <ul className="header__main-src">
                   <li className={`${location === '/' ? 'src-main' : 'src'}`}>
-                    New
+                    <NavLink to="catalog">New</NavLink>
                   </li>
                   <li className={`${location === '/' ? 'src-main' : 'src'}`}>
                     Каталог
@@ -50,19 +62,21 @@ const Header = () => {
                 <h2 className="header__title">YANKI</h2>
 
                 <div className="header__type-lang">
-                  <MenuDown
+                  {/* <MenuDown
                     type={'lang'}
                     classList={'header'}
                     location={location}
-                  />
+                    addBg={addBg}
+                  /> */}
                 </div>
 
                 <div className="header__type-money">
-                  <MenuDown
+                  {/* <MenuDown
                     type={'money'}
                     classList={'header'}
                     location={location}
-                  />
+                    addBg={addBg}
+                  /> */}
                 </div>
               </div>
               <div className="header__main-button">

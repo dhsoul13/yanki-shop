@@ -1,0 +1,36 @@
+.filter {
+  display: flex;
+  flex-direction: column;
+  &__menu {
+    display: flex;
+    flex-direction: column;
+  }
+  &__title {
+    margin-bottom: 30px;
+    font-weight: 300;
+    font-size: $text-size20;
+    line-height: 19px;
+  }
+  &__elem {
+    margin-bottom: 19px;
+    display: flex;
+    button {
+      font-weight: 300;
+      line-height: 19px;
+      color: $color-black;
+      text-transform: capitalize;
+      text-decoration: none;
+      background-color: inherit;
+      border: none;
+      text-align: start;
+      padding: 0;
+      margin: 0;
+    }
+    button:hover {
+      color: $color-for-hover;
+    }
+    button:active {
+      color: $color-for-active;
+    }
+  }
+}

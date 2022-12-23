@@ -1,0 +1,22 @@
+.sortComonent {
+  display: flex;
+  position: relative;
+}
+.sortComonent__elem {
+  margin-right: 30px;
+}
+.sortComonent__elem button {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+}
+.sortComonent__button {
+  position: absolute;
+  width: 10%;
+  right: 0;
+  top: 0;
+}/*# sourceMappingURL=index.css.map */
