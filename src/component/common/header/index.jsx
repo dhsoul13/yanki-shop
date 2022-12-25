@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import Basket from '../../../assets/svg/backet';
 import Like from '../../../assets/svg/like';
 import Serch from '../../../assets/svg/serch';
@@ -11,6 +11,7 @@ import SearchInput from '../SearchInput';
 
 const Header = () => {
   const location = useLocation().pathname;
+  const navigate = useNavigate();
   const [scrollY, removeScroll] = useScroll();
   const [addBg, setAddBg] = useState(false);
 
@@ -29,6 +30,12 @@ const Header = () => {
 
   removeScroll();
   const [show, setShow] = useState(false);
+
+  ///Переходы
+
+  const navigateHandlerFromProbs = (path) => {
+    navigate(`/${path}`);
+  };
 
   return (
     <div className={`header ${(location === '/') & !addBg ? 'main' : ''} `}>
@@ -89,7 +96,12 @@ const Header = () => {
                 <div className="header__main-button-user">
                   <User />
                 </div>
-                <div className="header__main-button-like">
+                <div
+                  className="header__main-button-like"
+                  onClick={() => {
+                    navigateHandlerFromProbs('like');
+                  }}
+                >
                   <Like />
                 </div>
                 <div className="header__main-button-busket">

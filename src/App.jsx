@@ -6,6 +6,8 @@ import AuthHoc from './hoc/isAuthHoc';
 import OutletCommon from './component/common/outlet';
 import AuthPage from './page/AuthPage';
 import CatalogContainer from './container/CatalogContainer';
+import LikeContainer from './container/LikeContainer';
+import ErrorContainer from './container/ErrorContainer';
 
 const App = () => {
   return (
@@ -24,6 +26,14 @@ const App = () => {
           <Route
             path="/catalog"
             element={<CatalogContainer />}
+          />
+          <Route
+            path="/like"
+            element={<LikeContainer />}
+          />
+          <Route
+            path="*"
+            element={<ErrorContainer />}
           />
         </Route>
       </Routes>
