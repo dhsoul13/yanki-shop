@@ -24,5 +24,23 @@
       "filter": ["new"],
       "color": ["#6F83A4", "#F1DDAA"]
     }
+  ],
+  "like": [
+    {
+      "id": "1",
+      "title": "Пальто",
+      "price": "15000",
+      "size": ["xl", "l"],
+      "filter": ["new", "outerwear"],
+      "color": ["#6F83A4", "#F1DDAA"]
+    },
+    {
+      "id": "2",
+      "title": "Шуба",
+      "price": "5000",
+      "size": ["s", "l"],
+      "filter": ["outerwear"],
+      "color": ["#6F83A4", "#F1DDAA"]
+    }
   ]
 }

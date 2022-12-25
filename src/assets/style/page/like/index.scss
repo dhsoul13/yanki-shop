@@ -1,0 +1,10 @@
+.like {
+  height: 100vh;
+  margin-top: 100px;
+  &__title {
+    font-weight: 300;
+    font-size: $text-size20;
+    line-height: 23px;
+    color: $color-black;
+  }
+}

@@ -8,6 +8,10 @@ const pathRus = [
     path: 'catalog',
     pathRus: 'каталог',
   },
+  {
+    path: 'like',
+    pathRus: 'Избранное',
+  },
 ];
 
 const BreadCrumbs = () => {
