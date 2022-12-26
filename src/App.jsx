@@ -1,13 +1,14 @@
 import '../src/assets/style/index.scss';
 import { Route, Routes } from 'react-router-dom';
-import { useNavigate } from '@reach/router';
-import MainPage from './page/MainPage';
 import AuthHoc from './hoc/isAuthHoc';
 import OutletCommon from './component/common/outlet';
 import AuthPage from './page/AuthPage';
 import CatalogContainer from './container/CatalogContainer';
 import LikeContainer from './container/LikeContainer';
 import ErrorContainer from './container/ErrorContainer';
+import ContactContainer from './container/ContactContainer';
+import MainContainer from './container/MainContainer';
+import AboutContainer from './container/AboutContainer';
 
 const App = () => {
   return (
@@ -16,7 +17,7 @@ const App = () => {
         <Route element={<OutletCommon />}>
           <Route
             path="/"
-            element={<MainPage />}
+            element={<MainContainer />}
           />
 
           <Route
@@ -30,6 +31,14 @@ const App = () => {
           <Route
             path="/like"
             element={<LikeContainer />}
+          />
+          <Route
+            path="/contact"
+            element={<ContactContainer />}
+          />
+          <Route
+            path="/about"
+            element={<AboutContainer />}
           />
           <Route
             path="*"

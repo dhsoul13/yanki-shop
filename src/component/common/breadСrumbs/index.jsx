@@ -12,6 +12,14 @@ const pathRus = [
     path: 'like',
     pathRus: 'Избранное',
   },
+  {
+    path: 'contact',
+    pathRus: 'Контакты',
+  },
+  {
+    path: 'about',
+    pathRus: 'О нас',
+  },
 ];
 
 const BreadCrumbs = () => {

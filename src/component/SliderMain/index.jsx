@@ -6,10 +6,18 @@ import { product } from '../../helpers/content';
 import 'swiper/scss';
 import 'swiper/css/pagination';
 import ArrowFromSlider from '../../assets/svg/arrowFromSlider';
+import { useNavigate } from 'react-router-dom';
+import { useCallback } from 'react';
 
 const SliderMain = () => {
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);
+
+  const navigate = useNavigate();
+
+  const handlerTransition = useCallback((text) => {
+    navigate(`${text}`);
+  }, []);
 
   return (
     <>
@@ -55,6 +63,9 @@ const SliderMain = () => {
           <SwiperSlide
             className="section-two__slide"
             key={el.id}
+            onClick={() => {
+              handlerTransition(el.src);
+            }}
           >
             <div className="section-two__slide-src">{el.title}</div>
           </SwiperSlide>

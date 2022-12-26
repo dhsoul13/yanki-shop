@@ -106,34 +106,3 @@
     background-color: $color-for-button;
   }
 }
-
-.section-three {
-  &__content {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-  }
-  &__title {
-    text-align: center;
-    margin-bottom: 50px;
-  }
-  &__form {
-    width: calc(min(600px, 100%));
-  }
-  &__info {
-    font-size: 16px;
-    font-family: 'Raleway';
-    font-style: normal;
-    font-weight: 200;
-    line-height: 19px;
-    text-align: center;
-    color: $color-black;
-  }
-  &__input {
-    margin-bottom: 20px;
-  }
-  &__button {
-    margin-bottom: 20px;
-  }
-}

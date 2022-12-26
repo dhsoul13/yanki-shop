@@ -47,6 +47,7 @@ const Header = () => {
               setShow={setShow}
               show={show}
               location={location}
+              navigate={navigateHandlerFromProbs}
             />
           </div>
           {show ? (
@@ -55,18 +56,40 @@ const Header = () => {
             <>
               <div className="header__main">
                 <ul className="header__main-src">
-                  <li className={`${location === '/' ? 'src-main' : 'src'}`}>
-                    <NavLink to="catalog">New</NavLink>
+                  <li
+                    className={`${location === '/' ? 'src-main' : 'src'}`}
+                    onClick={() => {
+                      navigateHandlerFromProbs('catalog?type=new');
+                    }}
+                  >
+                    New
                   </li>
-                  <li className={`${location === '/' ? 'src-main' : 'src'}`}>
+                  <li
+                    className={`${location === '/' ? 'src-main' : 'src'}`}
+                    onClick={() => {
+                      navigateHandlerFromProbs('catalog');
+                    }}
+                  >
                     Каталог
                   </li>
-                  <li className={`${location === '/' ? 'src-main' : 'src'}`}>
+                  <li
+                    className={`${location === '/' ? 'src-main' : 'src'}`}
+                    onClick={() => {
+                      navigateHandlerFromProbs('about');
+                    }}
+                  >
                     О нас
                   </li>
                 </ul>
 
-                <h2 className="header__title">YANKI</h2>
+                <h2
+                  className="header__title"
+                  onClick={() => {
+                    navigateHandlerFromProbs('');
+                  }}
+                >
+                  YANKI
+                </h2>
 
                 <div className="header__type-lang">
                   {/* <MenuDown
@@ -90,7 +113,7 @@ const Header = () => {
                 <div className="header__main-button-serch">
                   <Serch />
                   <div className="header__main-button-elem">
-                    <SearchInput className={'header'} />
+                    {/* <SearchInput className={'header'} /> */}
                   </div>
                 </div>
                 <div className="header__main-button-user">
